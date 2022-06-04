@@ -14,7 +14,13 @@ const root = createRoot(container);
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      addProduct: false
+    };
+  }
+
+  addProduct() {
+    this.setState({ addProduct: !this.state.addProduct })
   }
 
   render() {
@@ -23,10 +29,10 @@ class App extends React.Component {
     const OVR = ClickTracker(Overview, 'Overview')
     return (
       <div>
+        <Overview />
+        <RI added={this.state.addProduct} />
         <OVR />
         <RI />
-        <QA />
-        <RatingsAndReviews />
       </div>
     );
   }
