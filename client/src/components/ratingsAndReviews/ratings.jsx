@@ -47,7 +47,8 @@ class Ratings extends React.Component {
   render() {
     const total = this.state.meta.ratings
       ? Object.values(this.state.meta.ratings).reduce(
-          (a, b) => parseInt(a) + parseInt(b)
+          (a, b) => parseInt(a) + parseInt(b),
+          '0'
         )
       : 100;
     const recommended = this.state.meta.recommended
@@ -79,6 +80,7 @@ class Ratings extends React.Component {
           ? '12345'.split('').map((count) => (
               <div
                 key={count}
+                id={'ratings' + count}
                 className="hover-gray"
                 onClick={(e) => {
                   sendClickTracker(e, 'rating and review');

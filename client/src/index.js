@@ -1,10 +1,13 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import axios from 'axios';
 
-import Overview from './components/overview/Overview';
+// import Overview from './components/overview/Overview';
+import Coupler from './components/container/Coupler';
 import QAMain from './components/Questions_Answers/QAMain.jsx';
 import RatingsAndReviews from './components/ratingsAndReviews/ratingsAndReviews.jsx';
-import RIC from './components/RIC_Component/RIC.jsx';
+import Banner from './components/Banner.jsx';
+// import RIC from './components/RIC_Component/RIC.jsx';
 
 import ClickTracker from './components/common/ClickTracker.jsx';
 
@@ -14,23 +17,15 @@ const root = createRoot(container);
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      addProduct: false
-    };
-  }
-
-  addProduct() {
-    this.setState({ addProduct: !this.state.addProduct })
+    this.state = {};
   }
 
   render() {
     const QA = ClickTracker(QAMain, 'Question & Answer');
-    const RI = ClickTracker(RIC, 'Related Items');
-    const OVR = ClickTracker(Overview, 'Overview')
     return (
       <div>
-        <OVR />
-        <RI added={this.state.addProduct} />
+        <Banner />
+        <Coupler />
         <QA />
         <RatingsAndReviews />
       </div>
