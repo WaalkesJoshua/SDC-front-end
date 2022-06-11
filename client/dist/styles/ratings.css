@@ -118,8 +118,11 @@
   display: inline-block;
 }
 .reviewTile {
-  padding-bottom: 7px;
+  padding: 1em;
   border-bottom: 4px solid black;
+}
+.ba1 {
+  border: 1px solid black;
 }
 
 .underline {
