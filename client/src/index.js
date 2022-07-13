@@ -27,9 +27,9 @@ class App extends React.Component {
       <div>
         <React.Suspense fallback={<div style={{padding: '0vw 10vw'}}>Loading...</div>}>
           <section>
-            <Banner />
+            {/* <Banner />
             <Coupler />
-            <QA />
+            <QA /> */}
             <RatingsAndReviews />
           </section>
         </React.Suspense>

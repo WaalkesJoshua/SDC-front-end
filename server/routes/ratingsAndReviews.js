@@ -33,15 +33,13 @@ router.get('/:id/rating', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   // console.log(req.query);
   sendRequest(
-    `reviews/?product_id=${req.params.id}&sort=${
-      req.query.sort || 'relevance'
-    }&count=2&page=${req.query.page || 1}`,
+    `reviews/?product_id=2`,
     'get'
   )
     .then((response) => response.data)
     .then((data) => res.send(data))
     .catch((err) => {
-      console.error(err);
+      console.error('hello');
       res.status(500).send(err);
     });
 });

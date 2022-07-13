@@ -8,7 +8,7 @@ const {token} = require('../../config');
 const sendRequest = (endpoint, method = 'GET', data = {}) => {
   // default behavior is a get request
   return axios({
-    url:`https://app-hrsei-api.herokuapp.com/api/fec2/hr-rpp/${endpoint}`,
+    url:`http://localhost:4000`,
     method: method,
     headers: {
       'Authorization': token,
