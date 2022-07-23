@@ -23,7 +23,7 @@ const ReviewTile = (props) => {
       <div className="recommend">
         {props.review.recommend ? '√ I recommend this product' : null}
       </div>
-      <div id="reviewImages">
+      {/* <div id="reviewImages">
         {props.review.photos.map(({ url }, i) => (
           <>
             <Modal
@@ -45,7 +45,7 @@ const ReviewTile = (props) => {
             ></img>
           </>
         ))}
-      </div>
+      </div> */}
       helpful?{' '}
       <span
         className={!props.helpful ? `underline` : null}

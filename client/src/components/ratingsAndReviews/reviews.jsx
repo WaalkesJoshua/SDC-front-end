@@ -184,16 +184,16 @@ class Reviews extends React.Component {
   }
   componentDidMount() {
     axios.get('/rating_review/' + this.props.id).then((response) => {
-      this.setState({ reviews: response.data.results });
+      this.setState({ reviews: response.data});
     });
-    axios
-      .get('/rating_review/' + this.props.id + '/rating')
-      .then(({ data }) => {
-        this.setState({
-          characteristicKeys: Object.keys(data.characteristics),
-          meta: data,
-        });
-      });
+    // axios
+    //   .get('/rating_review/' + this.props.id + '/rating')
+    //   .then(({ data }) => {
+    //     this.setState({
+    //       characteristicKeys: Object.keys(data.characteristics),
+    //       meta: data,
+    //     });
+    //   });
   }
 
   helpfulClicked(review_ID) {

@@ -20,26 +20,29 @@ router.put('/reviews/:id/report', (req, res, next) => {
     });
 });
 
-router.get('/:id/rating', (req, res, next) => {
-  sendRequest(`reviews/meta?product_id=${req.params.id}`, 'get')
-    .then((response) => response.data)
-    .then((data) => res.send(data))
-    .catch((err) => {
-      // console.error(error.data);
-      res.status(500).send(err.data);
-    });
-});
+// router.get('/:id/rating', (req, res, next) => {
+//   sendRequest(`reviews/meta?product_id=${req.params.id}`, 'get')
+//     .then((response) => response.data)
+//     .then((data) => res.send(data))
+//     .catch((err) => {
+//       // console.error(error.data);
+//       res.status(500).send(err.data);
+//     });
+// });
 
 router.get('/:id', (req, res, next) => {
   // console.log(req.query);
   sendRequest(
-    `reviews/?product_id=2`,
+    `reviews/?product_id=${req.params.id}&sort=${
+      req.query.sort || 'relevance'
+    }&count=2&page=${req.query.page || 1}`,
     'get'
   )
     .then((response) => response.data)
     .then((data) => res.send(data))
+    // .then(() => console.log('got it'))
     .catch((err) => {
-      console.error('hello');
+      console.error(err);
       res.status(500).send(err);
     });
 });

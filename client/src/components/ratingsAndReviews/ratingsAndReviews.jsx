@@ -23,13 +23,13 @@ class RatingsAndReviews extends React.Component {
 
     return (
       <div id="ratings_reviews">
-        <Ratings
+        {/* <Ratings
           id={id}
           filter={(count) => {
             this.setState({ [count]: !this.state[count] });
           }}
           filtered={this.state}
-        ></Ratings>
+        ></Ratings> */}
         <div className="reviewsContainer" id="reviews">
           <Reviews id={id} filtered={this.state}></Reviews>
         </div>

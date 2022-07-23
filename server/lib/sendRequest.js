@@ -8,7 +8,7 @@ const {token} = require('../../config');
 const sendRequest = (endpoint, method = 'GET', data = {}) => {
   // default behavior is a get request
   return axios({
-    url:`http://localhost:4000`,
+    url:`http://localhost:4000/${endpoint}`,
     method: method,
     headers: {
       'Authorization': token,
